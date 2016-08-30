@@ -1,2 +1,2 @@
 # TTK4155
-Industrial and Embedded Computer Sytems Design
+Industrial and Embedded Computer Systems Design
