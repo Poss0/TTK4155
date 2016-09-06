@@ -4,5 +4,7 @@
 
 Nicolas_Seillier.c
 
+SRAM_test.c
+
 UART.c
 

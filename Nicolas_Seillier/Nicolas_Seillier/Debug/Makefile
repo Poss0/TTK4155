@@ -38,6 +38,7 @@ SUBDIRS :=
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
 ../Nicolas_Seillier.c \
+../SRAM_test.c \
 ../UART.c
 
 
@@ -49,18 +50,22 @@ ASM_SRCS +=
 
 OBJS +=  \
 Nicolas_Seillier.o \
+SRAM_test.o \
 UART.o
 
 OBJS_AS_ARGS +=  \
 Nicolas_Seillier.o \
+SRAM_test.o \
 UART.o
 
 C_DEPS +=  \
 Nicolas_Seillier.d \
+SRAM_test.d \
 UART.d
 
 C_DEPS_AS_ARGS +=  \
 Nicolas_Seillier.d \
+SRAM_test.d \
 UART.d
 
 OUTPUT_FILE_PATH +=Nicolas_Seillier.elf
@@ -77,6 +82,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 
