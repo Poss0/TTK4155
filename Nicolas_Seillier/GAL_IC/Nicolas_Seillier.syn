@@ -1,0 +1,11 @@
+JDF B
+// Created by Version 2.0 
+PROJECT Nicolas_Seillier
+DESIGN nicolas_seillier Normal
+DEVKIT GAL16V8D-15QP
+ENTRY Pure VHDL
+MODULE nicolas_seillier.vhd
+MODSTYLE decodeur Normal
+SYNTHESIS_TOOL Synplify
+SIMULATOR_TOOL ActiveHDL
+TOPMODULE decodeur

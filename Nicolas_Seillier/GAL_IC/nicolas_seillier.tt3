@@ -1,0 +1,22 @@
+#$ TOOL ispLEVER Classic 2.0.00.17.20.15
+#$ DATE Tue Sep 13 09:47:55 2016
+#$ MODULE decodeur
+#$ DEVICE p16v8
+#$ PINS 8 a11:1 a10:2 a9:3 a8:4 ram_cs-:19 adc_cs-:18 oled_cs-:17 oled_dc-:16
+.i 3 
+.o 4 
+.type fr
+.ilb a11 a10 a9
+.ob ram_cs adc_cs oled_cs oled_dc
+.phase 1111
+.p 9
+1-- 1000
+01- ~1~~
+001 ~~~1
+000 ~~1~
+0-- 0~~~
+-1- ~~00
+-0- ~0~~
+--1 ~~0~
+--0 ~~~0
+.e

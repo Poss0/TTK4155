@@ -1,0 +1,7 @@
+C:\ispLEVER_Classic2_0\synpbase\bin64\c_vhdl.exe  -osyn  C:\users\paulinen\documents\ttk4155\nicolas_seillier\synwork\decodeur_comp.srs  -top  decodeur  -prodtype  synplify_pro  -nostructver -dfltencoding sequential -encrypt  -pro  -dmgen  C:\users\paulinen\documents\ttk4155\nicolas_seillier\dm  -lite -ui -fid2 -ram -sharing on -ll 2000 -autosm -ignore_undefined_lib  -lib work C:\users\paulinen\documents\ttk4155\nicolas_seillier\nicolas_seillier.vhd -loga  C:\users\paulinen\documents\ttk4155\nicolas_seillier\decodeur.srr 
+rc:0 success:1
+C:\users\paulinen\documents\ttk4155\nicolas_seillier\synwork\decodeur_comp.srs|o|1473752868|2007
+C:\users\paulinen\documents\ttk4155\nicolas_seillier\nicolas_seillier.vhd|i|1473752816|911
+C:\users\paulinen\documents\ttk4155\nicolas_seillier\decodeur.srr|o|1473752868|1496
+C:\ispLEVER_Classic2_0\synpbase\bin\c_vhdl.exe|i|1401223898|2046976
+C:\ispLEVER_Classic2_0\synpbase\bin64\c_vhdl.exe|i|1401224104|5533184
