@@ -109,13 +109,25 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ADC.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ADC.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Joystick.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Joystick.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Nicolas_Seillier.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="SRAM_test.c">
+    <Compile Include="SRAM.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="SRAM_test.h">
+    <Compile Include="SRAM.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="UART.c">

@@ -8,47 +8,48 @@
 
 #include <stdio.h>
 #include <avr/io.h>
+#include <avr/delay.h>
 #include "UART.h"
-#include "SRAM_test.h"
+#include "SRAM.h"
+#include "ADC.h"
+#include "Joystick.h"
 
 #define F_CPU 4915200UL
 #define FOSC 4915200
-#include <avr/delay.h>
 #define BAUD 9600
-#define MYUBBR FOSC/16/BAUD-1
+#define UART_BAUD FOSC/16/BAUD-1
+
+#define SLIDE_LEFT 0x6
+#define SLIDE_RIGHT 0x7
+#define TOUCH_LEFT (PINB & 0x4)>>2
+#define TOUCH_RIGHT (PINB & 0x2)>>1
+#define JOYSTICK_BUTTON ~PINB & 0x1
 
 int main(void)
 {
-	/* Enable port A */
-	DDRA = 0xFF;
-	
 	/* Initialize UART */
-	UART_Init(MYUBBR);
+	UART_Init(UART_BAUD);
 	printf("Reset\n");
 	_delay_ms(1000);
 	
-	/* Enable external SRAM: setting SRE to 1 */
-	MCUCR |= (1 << SRE);
+	/* Initialize SRAM, ADC and OLED */
+	SRAM_Init();
 	
-	SRAM_test();
+	/* Enable port B: the three buttons are inputs */
+	PORTB |= 0x07;
 	
     while(1)
     {
-        /* Set pins of port A */
-		//PORTA = 0xAA;
+		Position joystick = Joystick_Position();
+		char* direction = Joystick_Direction(&joystick);
+		printf("Joystick is %s: x %3.f, y %3.f\n", direction, joystick.x, joystick.y);
 		
-		/* Try to communicate via UART */
-		//unsigned char sent = 'A';
-		//UART_Transmit(sent);
-		//unsigned char received = UART_Receive();
-		//printf("Test\n");
-		//_delay_ms(1000);
+		uint8_t slide_left = ADC_Convert(SLIDE_LEFT); 
+		uint8_t slide_right = ADC_Convert(SLIDE_RIGHT);
+		printf("Sliders are: left %d, right %d\n", slide_left, slide_right);
 		
-		/* Try to write to the external memory */
-		//volatile char *ext_ram = (char *) 0x1800;
-		//ext_ram[12] = 0x0F;
-		//_delay_ms(9000);
-		//_delay_ms(500);
-		//printf("%c\n",ext_ram[12]);
+		printf("Buttons are: left %u, joystick %u, right %u\n", TOUCH_LEFT, JOYSTICK_BUTTON, TOUCH_RIGHT);
+		
+		_delay_ms(3000);
     }
 }

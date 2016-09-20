@@ -1,7 +1,7 @@
-C:\ispLEVER_Classic2_0\synpbase\bin64\syn_nfilter.exe  -link  -top  decodeur  -multisrs  C:\users\paulinen\documents\ttk4155\nicolas_seillier\synwork\decodeur_comp.srs  -osyn  C:\users\paulinen\documents\ttk4155\nicolas_seillier\synwork\decodeur_mult.srs  -log  C:\users\paulinen\documents\ttk4155\nicolas_seillier\synlog\decodeur_multi_srs_gen.srr 
+C:\ispLEVER_Classic2_0\synpbase\bin64\syn_nfilter.exe  -link  -top  decodeur  -multisrs  C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\synwork\decodeur_comp.srs  -osyn  C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\synwork\decodeur_mult.srs  -log  C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\synlog\decodeur_multi_srs_gen.srr 
 rc:0 success:1
-C:\users\paulinen\documents\ttk4155\nicolas_seillier\synwork\decodeur_comp.srs|i|1473752868|2007
-C:\users\paulinen\documents\ttk4155\nicolas_seillier\synwork\decodeur_mult.srs|o|1473752870|1949
-C:\users\paulinen\documents\ttk4155\nicolas_seillier\synlog\decodeur_multi_srs_gen.srr|o|1473752870|376
+C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\synwork\decodeur_comp.srs|i|1474364121|2085
+C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\synwork\decodeur_mult.srs|o|1474364123|2070
+C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\synlog\decodeur_multi_srs_gen.srr|o|1474364123|483
 C:\ispLEVER_Classic2_0\synpbase\bin\syn_nfilter.exe|i|1401223936|2741760
 C:\ispLEVER_Classic2_0\synpbase\bin64\syn_nfilter.exe|i|1401224132|6337536

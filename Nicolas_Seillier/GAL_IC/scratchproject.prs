@@ -1,14 +1,14 @@
 #--  Synopsys, Inc.
 #--  Version I-2014.03LC 
-#--  Project file C:\users\paulinen\documents\ttk4155\nicolas_seillier\scratchproject.prs
+#--  Project file C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\scratchproject.prs
 
 #project files
-add_file -vhdl -lib work "C:/users/paulinen/documents/ttk4155/nicolas_seillier/nicolas_seillier.vhd"
+add_file -vhdl -lib work "C:/users/paulinen/documents/ttk4155/nicolas_seillier/gal_ic/nicolas_seillier.vhd"
 
 
 
-#implementation: "nicolas_seillier"
-impl -add C:\users\paulinen\documents\ttk4155\nicolas_seillier -type fpga
+#implementation: "gal_ic"
+impl -add C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic -type fpga
 
 #device options
 set_option -technology ispGAL
@@ -47,8 +47,8 @@ set_option -auto_infer_blackbox 0
 set_option -write_apr_constraint 1
 
 #set result format/file last
-project -result_file "C:/users/paulinen/documents/ttk4155/nicolas_seillier/decodeur.edi"
+project -result_file "C:/users/paulinen/documents/ttk4155/nicolas_seillier/gal_ic/decodeur.edi"
 
 #set log file 
-set_option log_file "C:/users/paulinen/documents/ttk4155/nicolas_seillier/decodeur.srf" 
-impl -active "nicolas_seillier"
+set_option log_file "C:/users/paulinen/documents/ttk4155/nicolas_seillier/gal_ic/decodeur.srf" 
+impl -active "gal_ic"

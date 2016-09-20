@@ -30,8 +30,8 @@ end;
 architecture decodeur of decodeur is
 begin
 	ram_cs <= a11;
-	adc_cs <= (not a11) and a10;
-	oled_cs<= (not a11) and (not a10) and (not a9);
-	oled_dc <= (not a11) and (not a10) and a9;
+	adc_cs <= not ((not a11) and a10);
+	oled_cs<= not ((not a11) and (not a10) and (not a9));
+	oled_dc <= not ((not a11) and (not a10) and a9);
 end decodeur;
 

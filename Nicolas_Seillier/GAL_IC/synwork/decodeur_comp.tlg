@@ -1,3 +1,3 @@
-@N: CD630 :"C:\users\paulinen\documents\ttk4155\nicolas_seillier\nicolas_seillier.vhd":6:7:6:14|Synthesizing work.decodeur.decodeur 
+@N: CD630 :"C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\nicolas_seillier.vhd":6:7:6:14|Synthesizing work.decodeur.decodeur 
 Post processing for work.decodeur.decodeur
-@W: CL159 :"C:\users\paulinen\documents\ttk4155\nicolas_seillier\nicolas_seillier.vhd":11:2:11:3|Input a8 is unused
+@W: CL159 :"C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\nicolas_seillier.vhd":11:2:11:3|Input a8 is unused

@@ -1,10 +1,10 @@
-C:\ispLEVER_Classic2_0\synpbase\bin64\m_cpld.exe  -prodtype  synplify_pro  -encrypt  -pro  -rundir  C:\users\paulinen\documents\ttk4155\nicolas_seillier  -part ispGAL22LV10  -package LJ  -grade -4   -areadelay 0 -minc -RWCheckOnRam 1 -summaryfile C:\users\paulinen\documents\ttk4155\nicolas_seillier\synlog\report\decodeur_fpga_mapper.xml -top_level_module  decodeur  -multisrs  -oedif  C:\users\paulinen\documents\ttk4155\nicolas_seillier\decodeur.edi  -freq 1.000  C:\users\paulinen\documents\ttk4155\nicolas_seillier\synwork\decodeur_mult.srs  -devicelib  C:\ispLEVER_Classic2_0\synpbase\lib\cpld\lattice.v  -ologparam  C:\users\paulinen\documents\ttk4155\nicolas_seillier\syntmp\decodeur.plg  -osyn  C:\users\paulinen\documents\ttk4155\nicolas_seillier\decodeur.srm  -prjdir  c:\users\paulinen\documents\ttk4155\nicolas_seillier\  -prjname  decodeur  -log  C:\users\paulinen\documents\ttk4155\nicolas_seillier\synlog\decodeur_fpga_mapper.srr 
+C:\ispLEVER_Classic2_0\synpbase\bin64\m_cpld.exe  -prodtype  synplify_pro  -encrypt  -pro  -rundir  C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic  -part ispGAL22LV10  -package LJ  -grade -4   -areadelay 0 -minc -RWCheckOnRam 1 -summaryfile C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\synlog\report\decodeur_fpga_mapper.xml -top_level_module  decodeur  -multisrs  -oedif  C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\decodeur.edi  -freq 1.000  C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\synwork\decodeur_mult.srs  -devicelib  C:\ispLEVER_Classic2_0\synpbase\lib\cpld\lattice.v  -ologparam  C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\syntmp\decodeur.plg  -osyn  C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\decodeur.srm  -prjdir  c:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\  -prjname  decodeur  -log  C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\synlog\decodeur_fpga_mapper.srr 
 rc:0 success:1
-C:\users\paulinen\documents\ttk4155\nicolas_seillier\decodeur.edi|o|1473752870|6202
-C:\users\paulinen\documents\ttk4155\nicolas_seillier\synwork\decodeur_mult.srs|i|1473752870|1949
+C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\decodeur.edi|o|1474364123|6931
+C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\synwork\decodeur_mult.srs|i|1474364123|2070
 C:\ispLEVER_Classic2_0\synpbase\lib\cpld\lattice.v|i|1401260784|210986
-C:\users\paulinen\documents\ttk4155\nicolas_seillier\syntmp\decodeur.plg|o|1473752870|0
-C:\users\paulinen\documents\ttk4155\nicolas_seillier\decodeur.srm|o|1473752870|4148
-C:\users\paulinen\documents\ttk4155\nicolas_seillier\synlog\decodeur_fpga_mapper.srr|o|1473752870|1066
+C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\syntmp\decodeur.plg|o|1474364123|0
+C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\decodeur.srm|o|1474364123|4420
+C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\synlog\decodeur_fpga_mapper.srr|o|1474364123|1066
 C:\ispLEVER_Classic2_0\synpbase\bin\m_cpld.exe|i|1399365684|7067648
 C:\ispLEVER_Classic2_0\synpbase\bin64\m_cpld.exe|i|1399368522|8049664

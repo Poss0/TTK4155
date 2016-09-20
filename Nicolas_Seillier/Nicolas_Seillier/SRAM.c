@@ -1,6 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <avr/io.h>
+
+void SRAM_Init(void)
+{
+	/* Enable external SRAM: set SRE to 1 */
+	MCUCR |= (1 << SRE);
+}
 
 void SRAM_test(void)
 {

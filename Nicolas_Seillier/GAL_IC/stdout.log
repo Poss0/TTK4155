@@ -3,48 +3,49 @@ Running in Lattice mode
 
 Starting:    C:\ispLEVER_Classic2_0\synpbase\win64\mbin\synbatch.exe
 Install:     C:\ispLEVER_Classic2_0\synpbase
-Date:        Tue Sep 13 09:47:48 2016
+Date:        Tue Sep 20 11:35:21 2016
 Version:     I-2014.03LC 
 
-Arguments:   -product synplify_pro  -batch c:/users/paulinen/documents/ttk4155/nicolas_seillier\decodeur.prj
+Arguments:   -product synplify_pro  -batch c:/users/paulinen/documents/ttk4155/nicolas_seillier/gal_ic\decodeur.prj
 ProductType: synplify_pro
 
 
 
 
 
-log file: "C:\users\paulinen\documents\ttk4155\nicolas_seillier\decodeur.srr"
+log file: "C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\decodeur.srr"
 
-Running decodeur|nicolas_seillier
+Running decodeur|gal_ic
 
-Running: Compile on decodeur|nicolas_seillier
+Running: Compile on decodeur|gal_ic
 
-Running: Compile Process on decodeur|nicolas_seillier
+Running: Compile Process on decodeur|gal_ic
 
-Running: Compile Input on decodeur|nicolas_seillier
-Copied C:\users\paulinen\documents\ttk4155\nicolas_seillier\synwork\decodeur_comp.srs to C:\users\paulinen\documents\ttk4155\nicolas_seillier\decodeur.srs
+Running: Compile Input on decodeur|gal_ic
+Copied C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\synwork\decodeur_comp.srs to C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\decodeur.srs
 compiler Completed
 Return Code: 0
 Run Time:0h:00m:01s
 
-Running: Multi-srs Generator on decodeur|nicolas_seillier
-Copied C:\users\paulinen\documents\ttk4155\nicolas_seillier\synwork\decodeur_comp.srs to C:\users\paulinen\documents\ttk4155\nicolas_seillier\synwork\decodeur_s.srs
+Running: Multi-srs Generator on decodeur|gal_ic
+Copied C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\synwork\decodeur_comp.srs to C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\synwork\decodeur_s.srs
 multi_srs_gen Completed
 Return Code: 0
 Run Time:0h:00m:01s
-Copied C:\users\paulinen\documents\ttk4155\nicolas_seillier\synwork\decodeur_mult.srs to C:\users\paulinen\documents\ttk4155\nicolas_seillier\decodeur.srs
-Copied C:\users\paulinen\documents\ttk4155\nicolas_seillier\decodeur.srr to C:\users\paulinen\documents\ttk4155\nicolas_seillier\decodeur.srf
-Complete: Compile Process on decodeur|nicolas_seillier
-Complete: Compile on decodeur|nicolas_seillier
+Copied C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\synwork\decodeur_mult.srs to C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\decodeur.srs
+Copied C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\decodeur.srr to C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\decodeur.srf
+Complete: Compile Process on decodeur|gal_ic
+Complete: Compile on decodeur|gal_ic
 
-Running: Map on decodeur|nicolas_seillier
+Running: Map on decodeur|gal_ic
 
-Running: Map & Optimize on decodeur|nicolas_seillier
+Running: Map & Optimize on decodeur|gal_ic
 fpga_mapper Completed
 Return Code: 0
-Run Time:0h:00m:00s
-Complete: Map on decodeur|nicolas_seillier
-Complete: Logic Synthesis on decodeur|nicolas_seillier
+Run Time:0h:00m:01s
+Complete: Map on decodeur|gal_ic
+Copied C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\decodeur.srr to C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\decodeur.srf
+Complete: Logic Synthesis on decodeur|gal_ic
 
 exit status=0
 
