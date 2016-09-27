@@ -115,6 +115,9 @@
     <Compile Include="ADC.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Font4x6.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Joystick.c">
       <SubType>compile</SubType>
     </Compile>
@@ -122,6 +125,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Nicolas_Seillier.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="OLED.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="OLED.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="SRAM.c">

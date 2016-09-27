@@ -1,7 +1,7 @@
 #--  Synopsys, Inc.
 #--  Version I-2014.03LC 
 #--  Project file C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\run_options.txt
-#--  Written on Tue Sep 20 11:35:21 2016
+#--  Written on Tue Sep 27 12:22:38 2016
 
 
 #project files

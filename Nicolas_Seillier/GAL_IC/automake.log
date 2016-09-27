@@ -19,7 +19,7 @@ Done sucessfully with exit code 0.
 #Implementation: gal_ic
 
 $ Start of Compile
-#Tue Sep 20 11:35:21 2016
+#Tue Sep 27 12:22:38 2016
 
 Synopsys VHDL Compiler, version comp201403rcp1, Build 060R, built May 27 2014
 @N|Running in 64-bit mode
@@ -27,9 +27,9 @@ Copyright (C) 1994-2014 Synopsys, Inc. This software and the associated document
 
 @N: CD720 :"C:\ispLEVER_Classic2_0\synpbase\lib\vhd\std.vhd":123:18:123:21|Setting time resolution to ns
 @N:"C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\nicolas_seillier.vhd":6:7:6:14|Top entity is set to decodeur.
-File C:\users\paulinen\documents\ttk4155\nicolas_seillier\nicolas_seillier.vhd changed - recompiling
+File C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\nicolas_seillier.vhd changed - recompiling
 VHDL syntax check successful!
-File C:\users\paulinen\documents\ttk4155\nicolas_seillier\nicolas_seillier.vhd changed - recompiling
+File C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\nicolas_seillier.vhd changed - recompiling
 @N: CD630 :"C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\nicolas_seillier.vhd":6:7:6:14|Synthesizing work.decodeur.decodeur 
 Post processing for work.decodeur.decodeur
 @W: CL159 :"C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\nicolas_seillier.vhd":11:2:11:3|Input a8 is unused
@@ -38,43 +38,17 @@ Post processing for work.decodeur.decodeur
 At c_vhdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 68MB peak: 69MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
-# Tue Sep 20 11:35:21 2016
+# Tue Sep 27 12:22:38 2016
 
 ###########################################################]
 Synopsys Netlist Linker, version comp201403rcp1, Build 060R, built May 27 2014
 @N|Running in 64-bit mode
-File C:\users\paulinen\documents\ttk4155\nicolas_seillier\synwork\decodeur_comp.srs changed - recompiling
+File C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\synwork\decodeur_comp.srs changed - recompiling
 
 At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 67MB peak: 68MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
-# Tue Sep 20 11:35:23 2016
-
-###########################################################]
-Map & Optimize Report
-
-Synopsys CPLD Technology Mapper, Version maplat, Build 923R, Built May  6 2014
-Copyright (C) 1994-2013, Synopsys, Inc. This software and the associated documentation are proprietary to Synopsys, Inc. This software may only be used in accordance with the terms and conditions of a written license agreement with Synopsys, Inc.  All other use or distribution of the software is strictly prohibited.
-Product Version I-2014.03LC 
-@N: MF248 |Running in 64-bit mode.
----------------------------------------
-Resource Usage Report
-
-Simple gate primitives:
-IBUF            4 uses
-OBUF            4 uses
-AND2            4 uses
-INV             6 uses
-
-
-@N: FC100 |Timing Report not generated for this device, please use place and route tools for timing analysis.
-I-2014.03LC 
-Mapper successful!
-
-At Mapper Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 38MB peak: 102MB)
-
-Process took 0h:00m:01s realtime, 0h:00m:01s cputime
-# Tue Sep 20 11:35:23 2016
+# Tue Sep 27 12:22:39 2016
 
 ###########################################################]
 
@@ -94,8 +68,8 @@ Inspect circuit decodeur
     Number of input ports   : 4
     Number of output ports  : 4
     Number of bidir ports   : 0
-    Number of instances     : 17
-    Number of nets          : 20
+    Number of instances     : 14
+    Number of nets          : 17
 
 No design errors found in circuit decodeur
 
@@ -114,18 +88,15 @@ Portions Copyright(C), Alan Phillips, Lancaster University Computer Centre 1992-
 U.C. Berkeley, SIS Ver. 1.0, supported by Lattice Semiconductor Corp.
 Reading Open-ABEL 2 file decodeur.bl0...
 Node a10_i has been collapsed.
-Node a9_i has been collapsed.
+Node a9_c has been collapsed.
 Node a11_i has been collapsed.
 Node a10_c has been collapsed.
-Node a9_c has been collapsed.
-Node un3_oled_cs has been collapsed.
 Node adc_cs_1 has been collapsed.
-Node oled_dc_1 has been collapsed.
 Node un1_oled_cs has been collapsed.
-Node oled_dc_1_i has been collapsed.
-Node un3_oled_cs_i has been collapsed.
+Node un1_oled_cs_i has been collapsed.
 Node adc_cs_1_i has been collapsed.
 Node a11_c has been collapsed.
+Node oled_dc_c has been collapsed.
 Performing 'bypin choose' optimization...
 Writing Open-ABEL 2 (BLIF) file decodeur.bl1...
 

@@ -1,7 +1,7 @@
 
 
                                                                       Page 1
-ispLEVER Classic 2.0.00.17.20.15  -  Device Utilization Chart         Tue Sep 20 11:35:29 2016
+ispLEVER Classic 2.0.00.17.20.15  -  Device Utilization Chart         Tue Sep 27 12:22:43 2016
 
 
 
@@ -25,7 +25,7 @@ Output files:
 
 
                                                                       Page 2
-ispLEVER Classic 2.0.00.17.20.15  -  Device Utilization Chart         Tue Sep 20 11:35:29 2016
+ispLEVER Classic 2.0.00.17.20.15  -  Device Utilization Chart         Tue Sep 27 12:22:43 2016
 
 P16V8AS Programmed Logic:
 --------------------------------------------------------------------------------
@@ -36,14 +36,14 @@ ram_cs     = !(  !a11 );
 
 adc_cs     = !(  !a11 & a10 );
 
-oled_cs     = !(  !a11 & !a10 & !a9 );
+oled_cs     = !(  !a11 & !a10 );
 
-oled_dc     = !(  !a11 & !a10 & a9 );
+oled_dc     = (  !a11 & !a10 & a9 );
 
 
 
                                                                       Page 3
-ispLEVER Classic 2.0.00.17.20.15  -  Device Utilization Chart         Tue Sep 20 11:35:29 2016
+ispLEVER Classic 2.0.00.17.20.15  -  Device Utilization Chart         Tue Sep 27 12:22:43 2016
 
 P16V8AS Chip Diagram:
 --------------------------------------------------------------------------------
@@ -83,7 +83,7 @@ P16V8AS Chip Diagram:
 
 
                                                                       Page 4
-ispLEVER Classic 2.0.00.17.20.15  -  Device Utilization Chart         Tue Sep 20 11:35:29 2016
+ispLEVER Classic 2.0.00.17.20.15  -  Device Utilization Chart         Tue Sep 27 12:22:43 2016
 
 P16V8AS Resource Allocations:
 --------------------------------------------------------------------------------
@@ -111,7 +111,7 @@ Buried Nodes:         |           |             |
 
 
                                                                       Page 5
-ispLEVER Classic 2.0.00.17.20.15  -  Device Utilization Chart         Tue Sep 20 11:35:29 2016
+ispLEVER Classic 2.0.00.17.20.15  -  Device Utilization Chart         Tue Sep 27 12:22:43 2016
 
 P16V8AS Product Terms Distribution:
 --------------------------------------------------------------------------------
@@ -137,7 +137,7 @@ a9                                       |    3     | INPUT
 
 
                                                                       Page 6
-ispLEVER Classic 2.0.00.17.20.15  -  Device Utilization Chart         Tue Sep 20 11:35:29 2016
+ispLEVER Classic 2.0.00.17.20.15  -  Device Utilization Chart         Tue Sep 27 12:22:43 2016
 
 P16V8AS Unused Resources:
 --------------------------------------------------------------------------------

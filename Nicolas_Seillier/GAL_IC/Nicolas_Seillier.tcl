@@ -310,3 +310,191 @@ if [runCmd "\"$cpld_bin/fuseasm\" nicolas_seillier.tt3 -dev p16v8 -o nicolas_sei
 
 ########## Tcl recorder end at 09/20/16 11:35:12 ###########
 
+
+########## Tcl recorder starts at 09/27/16 10:35:54 ##########
+
+# Commands to make the Process: 
+# Hierarchy
+if [runCmd "\"$cpld_bin/vhd2jhd\" \"nicolas_seillier.vhd\" -o \"nicolas_seillier.jhd\" -m \"$install_dir/ispcpld/generic/lib/vhd/location.map\" -p \"$install_dir/ispcpld/generic/lib\""] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+
+########## Tcl recorder end at 09/27/16 10:35:54 ###########
+
+
+########## Tcl recorder starts at 09/27/16 10:36:12 ##########
+
+# Commands to make the Process: 
+# Chip Report
+if [catch {open decodeur.cmd w} rspFile] {
+	puts stderr "Cannot create response file decodeur.cmd: $rspFile"
+} else {
+	puts $rspFile "STYFILENAME: nicolas_seillier.sty
+PROJECT: decodeur
+WORKING_PATH: \"$proj_dir\"
+MODULE: decodeur
+VHDL_FILE_LIST: nicolas_seillier.vhd
+OUTPUT_FILE_NAME: decodeur
+SUFFIX_NAME: edi
+"
+	close $rspFile
+}
+if [runCmd "\"$cpld_bin/Synpwrap\" -e decodeur -target ispGAL -pro "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+file delete decodeur.cmd
+if [runCmd "\"$cpld_bin/edif2blf\" -edf \"decodeur.edi\" -out \"decodeur.bl0\" -err automake.err -log \"decodeur.log\" -prj nicolas_seillier -lib \"$install_dir/ispcpld/dat/mach.edn\" -cvt YES -net_Vcc VCC -net_GND GND -nbx -dse -tlw"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/iblifopt\" \"decodeur.bl0\" -red bypin choose -collapse -pterms 8 -family -err automake.err "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/iblflink\" \"decodeur.bl1\" -o \"nicolas_seillier.bl2\" -omod decodeur -family -err automake.err "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/iblifopt\" nicolas_seillier.bl2 -red bypin choose -sweep -collapse all -pterms 8 -err automake.err "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/idiofft\" nicolas_seillier.bl3 -pla -o nicolas_seillier.tt2 -dev p16v8 -define N -err automake.err "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/fit\" nicolas_seillier.tt2 -dev p16v8 -str -err automake.err "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/fuseasm\" nicolas_seillier.tt3 -dev p16v8 -o nicolas_seillier.jed -ivec NoInput.tmv -rep nicolas_seillier.rpt -doc brief -con ptblown -for brief -err automake.err "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+
+########## Tcl recorder end at 09/27/16 10:36:12 ###########
+
+
+########## Tcl recorder starts at 09/27/16 12:22:30 ##########
+
+# Commands to make the Process: 
+# Chip Report
+if [catch {open decodeur.cmd w} rspFile] {
+	puts stderr "Cannot create response file decodeur.cmd: $rspFile"
+} else {
+	puts $rspFile "STYFILENAME: nicolas_seillier.sty
+PROJECT: decodeur
+WORKING_PATH: \"$proj_dir\"
+MODULE: decodeur
+VHDL_FILE_LIST: nicolas_seillier.vhd
+OUTPUT_FILE_NAME: decodeur
+SUFFIX_NAME: edi
+"
+	close $rspFile
+}
+if [runCmd "\"$cpld_bin/Synpwrap\" -e decodeur -target ispGAL -pro "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+file delete decodeur.cmd
+if [runCmd "\"$cpld_bin/edif2blf\" -edf \"decodeur.edi\" -out \"decodeur.bl0\" -err automake.err -log \"decodeur.log\" -prj nicolas_seillier -lib \"$install_dir/ispcpld/dat/mach.edn\" -cvt YES -net_Vcc VCC -net_GND GND -nbx -dse -tlw"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/iblifopt\" \"decodeur.bl0\" -red bypin choose -collapse -pterms 8 -family -err automake.err "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/iblflink\" \"decodeur.bl1\" -o \"nicolas_seillier.bl2\" -omod decodeur -family -err automake.err "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/iblifopt\" nicolas_seillier.bl2 -red bypin choose -sweep -collapse all -pterms 8 -err automake.err "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/idiofft\" nicolas_seillier.bl3 -pla -o nicolas_seillier.tt2 -dev p16v8 -define N -err automake.err "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/fit\" nicolas_seillier.tt2 -dev p16v8 -str -err automake.err "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/fuseasm\" nicolas_seillier.tt3 -dev p16v8 -o nicolas_seillier.jed -ivec NoInput.tmv -rep nicolas_seillier.rpt -doc brief -con ptblown -for brief -err automake.err "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+
+########## Tcl recorder end at 09/27/16 12:22:30 ###########
+

@@ -40,6 +40,7 @@ C_SRCS +=  \
 ../ADC.c \
 ../Joystick.c \
 ../Nicolas_Seillier.c \
+../OLED.c \
 ../SRAM.c \
 ../UART.c
 
@@ -54,6 +55,7 @@ OBJS +=  \
 ADC.o \
 Joystick.o \
 Nicolas_Seillier.o \
+OLED.o \
 SRAM.o \
 UART.o
 
@@ -61,6 +63,7 @@ OBJS_AS_ARGS +=  \
 ADC.o \
 Joystick.o \
 Nicolas_Seillier.o \
+OLED.o \
 SRAM.o \
 UART.o
 
@@ -68,6 +71,7 @@ C_DEPS +=  \
 ADC.d \
 Joystick.d \
 Nicolas_Seillier.d \
+OLED.d \
 SRAM.d \
 UART.d
 
@@ -75,6 +79,7 @@ C_DEPS_AS_ARGS +=  \
 ADC.d \
 Joystick.d \
 Nicolas_Seillier.d \
+OLED.d \
 SRAM.d \
 UART.d
 
@@ -92,6 +97,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 

@@ -1,7 +1,7 @@
 C:\ispLEVER_Classic2_0\synpbase\bin64\c_vhdl.exe  -osyn  C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\synwork\decodeur_comp.srs  -top  decodeur  -prodtype  synplify_pro  -nostructver -dfltencoding sequential -encrypt  -pro  -dmgen  C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\dm  -lite -ui -fid2 -ram -sharing on -ll 2000 -autosm -ignore_undefined_lib  -lib work C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\nicolas_seillier.vhd -loga  C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\decodeur.srr 
 rc:0 success:1
-C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\synwork\decodeur_comp.srs|o|1474364121|2085
-C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\nicolas_seillier.vhd|i|1474364006|929
-C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\decodeur.srr|o|1474364121|1711
+C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\synwork\decodeur_comp.srs|o|1474971758|2029
+C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\nicolas_seillier.vhd|i|1474971738|913
+C:\users\paulinen\documents\ttk4155\nicolas_seillier\gal_ic\decodeur.srr|o|1474971758|1725
 C:\ispLEVER_Classic2_0\synpbase\bin\c_vhdl.exe|i|1401223898|2046976
 C:\ispLEVER_Classic2_0\synpbase\bin64\c_vhdl.exe|i|1401224104|5533184

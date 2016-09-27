@@ -13,6 +13,7 @@
 #include "SRAM.h"
 #include "ADC.h"
 #include "Joystick.h"
+#include "OLED.h"
 
 #define F_CPU 4915200UL
 #define FOSC 4915200
@@ -34,9 +35,21 @@ int main(void)
 	
 	/* Initialize SRAM, ADC and OLED */
 	SRAM_Init();
+	OLED_Reset();
+	OLED_Init();
 	
 	/* Enable port B: the three buttons are inputs */
 	PORTB |= 0x07;
+	
+	/* Draw something cool */
+	OLED_print_arrow(0x00, 0x00);
+	OLED_print_home(0x00, 0x00);
+	OLED_pos(6, 0);
+	OLED_print_string("Welcome to the best ping pong game in the world!");
+	OLED_pos(7, 0);
+	OLED_print_string("Welcome!");
+	OLED_pos(7, 50);
+	OLED_print_string("Goodbye!");
 	
     while(1)
     {
@@ -51,5 +64,7 @@ int main(void)
 		printf("Buttons are: left %u, joystick %u, right %u\n", TOUCH_LEFT, JOYSTICK_BUTTON, TOUCH_RIGHT);
 		
 		_delay_ms(3000);
+		
+		OLED_set_brightness(slide_left);
     }
 }
