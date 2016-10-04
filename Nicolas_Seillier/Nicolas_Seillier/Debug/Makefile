@@ -38,6 +38,7 @@ SUBDIRS :=
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
 ../ADC.c \
+../Framework.c \
 ../Joystick.c \
 ../Nicolas_Seillier.c \
 ../OLED.c \
@@ -53,6 +54,7 @@ ASM_SRCS +=
 
 OBJS +=  \
 ADC.o \
+Framework.o \
 Joystick.o \
 Nicolas_Seillier.o \
 OLED.o \
@@ -61,6 +63,7 @@ UART.o
 
 OBJS_AS_ARGS +=  \
 ADC.o \
+Framework.o \
 Joystick.o \
 Nicolas_Seillier.o \
 OLED.o \
@@ -69,6 +72,7 @@ UART.o
 
 C_DEPS +=  \
 ADC.d \
+Framework.d \
 Joystick.d \
 Nicolas_Seillier.d \
 OLED.d \
@@ -77,6 +81,7 @@ UART.d
 
 C_DEPS_AS_ARGS +=  \
 ADC.d \
+Framework.d \
 Joystick.d \
 Nicolas_Seillier.d \
 OLED.d \
@@ -97,6 +102,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 

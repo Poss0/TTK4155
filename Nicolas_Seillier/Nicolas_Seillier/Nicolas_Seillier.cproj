@@ -118,6 +118,12 @@
     <Compile Include="Font4x6.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Framework.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Framework.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Joystick.c">
       <SubType>compile</SubType>
     </Compile>

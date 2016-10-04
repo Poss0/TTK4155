@@ -18,9 +18,13 @@ void OLED_print(char*);
 
 void OLED_print_string(char*);
 
-void OLED_print_arrow(uint8_t row, uint8_t col);
+void OLED_print_arrow();
 
-void OLED_print_home(uint8_t row, uint8_t col);
+void OLED_erase_arrow();
+
+void OLED_print_home();
+
+void OLED_print_woman(uint8_t page, uint8_t segment);
 
 
 #endif /* OLED_H_ */

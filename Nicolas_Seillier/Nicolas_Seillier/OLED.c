@@ -115,29 +115,66 @@ void OLED_print_string(char* string)
 	}
 }
 
-void OLED_print_arrow(uint8_t row, uint8_t col)
+void OLED_print_arrow()
 {
-	OLED_pos(0, 0);
-	OLED_write_data(0b00001000);
-	OLED_write_data(0b00001000);
-	OLED_write_data(0b00001000);
-	OLED_write_data(0b00001000);
-	OLED_write_data(0b00111110);
-	OLED_write_data(0b00011100);
-	OLED_write_data(0b00001000);
+	OLED_write_data(0b00010000);
+	OLED_write_data(0b00010000);
+	OLED_write_data(0b00010000);
+	OLED_write_data(0b00010000);
+	OLED_write_data(0b01111100);
+	OLED_write_data(0b00111000);
+	OLED_write_data(0b00010000);
 }
 
-void OLED_print_home(uint8_t row, uint8_t col)
+void OLED_erase_arrow()
 {
-	OLED_pos(5, 64);
+	OLED_write_data(0b00000000);
+	OLED_write_data(0b00000000);
+	OLED_write_data(0b00000000);
+	OLED_write_data(0b00000000);
+	OLED_write_data(0b00000000);
+	OLED_write_data(0b00000000);
+	OLED_write_data(0b00000000);
+}
+
+void OLED_print_home()
+{
 	OLED_write_data(0b00000000);
 	OLED_write_data(0b11111000);
 	OLED_write_data(0b11111100);
 	OLED_write_data(0b11110110);
 	OLED_write_data(0b00111111);
 	OLED_write_data(0b11110110);
-	OLED_write_data(0b11111111);
+	OLED_write_data(0b11111100);
 	OLED_write_data(0b11111000);
+	OLED_write_data(0b00000000);
+}
+
+void OLED_print_woman(uint8_t page, uint8_t segment)
+{
+	OLED_pos(page, segment);
+	OLED_write_data(0b00000000);
+	OLED_write_data(0b00000000);
+	OLED_write_data(0b00010000);
+	OLED_write_data(0b10010100);
+	OLED_write_data(0b11010111);
+	OLED_write_data(0b11111111);
+	OLED_write_data(0b11010111);
+	OLED_write_data(0b10010100);
+	OLED_write_data(0b00010000);
+	OLED_write_data(0b00000000);
+	OLED_write_data(0b00000000);
+	OLED_pos(page+1, segment);
+	OLED_write_data(0b00000000);
+	OLED_write_data(0b00000010);
+	OLED_write_data(0b00000011);
+	OLED_write_data(0b00100011);
+	OLED_write_data(0b00111111);
+	OLED_write_data(0b00000011);
+	OLED_write_data(0b00111111);
+	OLED_write_data(0b00100011);
+	OLED_write_data(0b00000011);
+	OLED_write_data(0b00000010);
 	OLED_write_data(0b00000000);
 }
 
