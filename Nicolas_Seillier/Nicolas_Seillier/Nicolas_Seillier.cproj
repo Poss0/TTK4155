@@ -115,6 +115,12 @@
     <Compile Include="ADC.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="CAN.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="CAN.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Font4x6.h">
       <SubType>compile</SubType>
     </Compile>
@@ -130,6 +136,15 @@
     <Compile Include="Joystick.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="MCP2515.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCP2515.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCP251DEFS.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Nicolas_Seillier.c">
       <SubType>compile</SubType>
     </Compile>
@@ -137,6 +152,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="OLED.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="SPI.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="SPI.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="SRAM.c">

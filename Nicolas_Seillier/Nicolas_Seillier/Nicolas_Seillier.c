@@ -219,6 +219,9 @@ int main(void)
 	SRAM_Init();
 	OLED_Reset();
 	OLED_Init();
+	MCP2515_INIT();
+	CAN_init();
+	
 	
 	/* Enable port B */
 	PORTB |= 0x01;
@@ -270,5 +273,6 @@ int main(void)
 		}
 		
 		_delay_ms(800);
+	
     }
 }
