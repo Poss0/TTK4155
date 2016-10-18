@@ -62,7 +62,7 @@ void OLED_Reset()
 /* Init the OLED display */
 void OLED_Init()
 {
-	OLED_write_cmd(0xae);        //  display  off
+	OLED_write_cmd(0xae);        //display  off
 	OLED_write_cmd(0xa1);        //segment  remap
 	OLED_write_cmd(0xda);        //common  pads  hardware:  alternative
 	OLED_write_cmd(0x12);
@@ -83,7 +83,7 @@ void OLED_Init()
 	OLED_write_cmd(0x00);
 	OLED_write_cmd(0xa4);        //out  follows  RAM  content
 	OLED_write_cmd(0xa6);        //set  normal  display
-	OLED_write_cmd(0xaf);        //  display  on
+	OLED_write_cmd(0xaf);        //display  on
 }
 
 /* Set the cursor to the given position: page is from 0 to 7, segment from 0 to 127 */
@@ -100,7 +100,7 @@ void OLED_print(char* a)
 	int index = (int)a - 32;
 	for(int i=0; i<4; i++)
 	{
-		OLED_write_data(font[index][i]);
+		OLED_write_data(pgm_read_byte(font[index][i]));
 	}
 }
 

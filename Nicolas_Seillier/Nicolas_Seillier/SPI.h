@@ -2,7 +2,7 @@
 #define SPI_H_
 
 void SPI_Init(void);
-void SPI_write(char cData);
+char SPI_write(char cData);
 char SPI_read(void);
 void SPI_on(void);
 void SPI_off(void);

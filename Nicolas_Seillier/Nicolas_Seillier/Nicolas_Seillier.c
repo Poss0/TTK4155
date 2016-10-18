@@ -7,6 +7,7 @@
 
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdint.h>
 #include <avr/io.h>
 #include <avr/delay.h>
@@ -17,6 +18,10 @@
 #include "Joystick.h"
 #include "OLED.h"
 #include "Framework.h"
+#include "SPI.h"
+#include "MCP2515.h"
+#include "MCP251DEFS.h"
+#include "CAN.h"
 
 #define F_CPU 4915200UL
 #define FOSC 4915200
@@ -105,7 +110,7 @@ ISR(INT1_vect)
 
 void ISR_joystick_click()
 {
-	printf("Interrupted by joystick button!\n");
+	//printf("Interrupted by joystick button!\n");
 }
 
 void ISR_slide_right()
@@ -219,19 +224,23 @@ int main(void)
 	SRAM_Init();
 	OLED_Reset();
 	OLED_Init();
-	MCP2515_INIT();
 	CAN_init();
-	
-	
-	/* Enable port B */
-	PORTB |= 0x01;
 	
 	/* Draw something cool */
 	draw_home();
 	
+	/* Send and receive a CAN message */
+	MSG test_message;
+	test_message.ID = 163;
+	test_message.length = 1;
+	test_message.data[0] = 153;
+	CAN_send(&test_message);
+	_delay_ms(1000);
+	MSG received_test = CAN_receive();
+	printf("ID: %d, length: %d, data: %d\n", received_test.ID, received_test.length, received_test.data[0]);
 	/* Enable interrupts */
 	GICR |= (1 << INT0) | (1 << INT1); //| (1 << INT2);
-	SREG |= (1 << 7);
+	//SREG |= (1 << 7);
 	MCUCR |= (1<< ISC00) | (1 << ISC01) | (1 << ISC10) | (1 << ISC11);
 	//EMCUCR &= (0 << ISC2);
 	sei();
@@ -273,6 +282,5 @@ int main(void)
 		}
 		
 		_delay_ms(800);
-	
     }
 }
