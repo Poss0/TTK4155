@@ -10,14 +10,13 @@ void SPI_Init(void)
 	SPCR = (1<<SPE)|(1<<MSTR)|(1<<SPR0);
 }
 
-char SPI_write(char cData)
+void SPI_write(char cData)
 {
 	/* Start transmission */
 	SPDR = cData;
 	/* Wait for transmission complete */
 	while (!(SPSR & (1<<SPIF)))
 		;
-	return SPDR;
 }
 
 char SPI_read(void)

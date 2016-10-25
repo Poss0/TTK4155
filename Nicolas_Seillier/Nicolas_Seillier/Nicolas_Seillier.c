@@ -232,17 +232,18 @@ int main(void)
 	/* Send and receive a CAN message */
 	MSG test_message;
 	test_message.ID = 163;
-	test_message.length = 1;
+	test_message.length = 1; 
 	test_message.data[0] = 153;
 	CAN_send(&test_message);
 	_delay_ms(1000);
 	MSG received_test = CAN_receive();
 	printf("ID: %d, length: %d, data: %d\n", received_test.ID, received_test.length, received_test.data[0]);
+	
 	/* Enable interrupts */
 	GICR |= (1 << INT0) | (1 << INT1); //| (1 << INT2);
-	//SREG |= (1 << 7);
+	SREG |= (1 << 7);
 	MCUCR |= (1<< ISC00) | (1 << ISC01) | (1 << ISC10) | (1 << ISC11);
-	//EMCUCR &= (0 << ISC2);
+	EMCUCR &= (0 << ISC2);
 	sei();
 	
 	/* Variables initialization */

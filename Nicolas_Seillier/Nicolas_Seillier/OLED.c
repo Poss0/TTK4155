@@ -100,7 +100,7 @@ void OLED_print(char* a)
 	int index = (int)a - 32;
 	for(int i=0; i<4; i++)
 	{
-		OLED_write_data(pgm_read_byte(font[index][i]));
+		OLED_write_data(pgm_read_byte(&font[index][i]));
 	}
 }
 

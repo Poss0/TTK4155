@@ -3,7 +3,7 @@
 
 #include <avr/pgmspace.h>
 
-const unsigned char PROGMEM font[95][4] = {
+const unsigned char font[95][4] PROGMEM = {
 	{0b00000000,0b00000000,0b00000000,0b00000000}, //
 	{0b00000000,0b01011100,0b00000000,0b00000000}, // !
 	{0b00001100,0b00000000,0b00001100,0b00000000}, // "
