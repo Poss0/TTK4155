@@ -1876,8 +1876,8 @@ int main(void)
 	
 	/* Send and receive a CAN message */
 	MSG test_message;
-	test_message.ID = 163;
-     c48:	83 ea       	ldi	r24, 0xA3	; 163
+	test_message.ID = 173;
+     c48:	8d ea       	ldi	r24, 0xAD	; 173
      c4a:	90 e0       	ldi	r25, 0x00	; 0
      c4c:	9a 83       	std	Y+2, r25	; 0x02
      c4e:	89 83       	std	Y+1, r24	; 0x01

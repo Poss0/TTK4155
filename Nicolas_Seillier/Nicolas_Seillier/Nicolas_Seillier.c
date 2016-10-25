@@ -220,7 +220,7 @@ int main(void)
 	printf("Reset\n");
 	_delay_ms(1000);
 	
-	/* Initialize SRAM, ADC and OLED */
+	/* Initialize SRAM, ADC, OLED and CAN */
 	SRAM_Init();
 	OLED_Reset();
 	OLED_Init();
@@ -231,7 +231,7 @@ int main(void)
 	
 	/* Send and receive a CAN message */
 	MSG test_message;
-	test_message.ID = 163;
+	test_message.ID = 173;
 	test_message.length = 1; 
 	test_message.data[0] = 153;
 	CAN_send(&test_message);
