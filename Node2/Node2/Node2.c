@@ -33,14 +33,16 @@ int main(void)
 	CAN_init();
 	
 	/* Send and receive a CAN message */
-	MSG test_message;
-	test_message.ID = 173;
+	/*MSG test_message;
+	test_message.ID = 20;
 	test_message.length = 1;
-	test_message.data[0] = 153;
-	CAN_send(&test_message);
-	_delay_ms(1000);
-	MSG received_test = CAN_receive();
-	printf("ID: %d, length: %d, data: %d\n", received_test.ID, received_test.length, received_test.data[0]);
-	
-	while(1);	
+	test_message.data[0] = 20;*/
+	MSG received_test;
+	while(1){
+		/*CAN_send(&test_message);
+		printf("Sending: ID: %d, length: %d, data: %d\n", test_message.ID, test_message.length, test_message.data[0]);
+		_delay_ms(1000);*/
+		received_test = CAN_receive();
+		printf("Receiving: ID: %d, length: %d, x: %i, y:%i\n", received_test.ID, received_test.length, received_test.data[0], received_test.data[1]);
+	}
 }

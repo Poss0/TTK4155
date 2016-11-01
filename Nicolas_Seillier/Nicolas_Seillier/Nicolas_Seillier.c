@@ -211,12 +211,20 @@ void ISR_joystick(Position joystick)
 			OLED_print_arrow();
 		}
 	}
+	else if((mode == ONE_PLAYER) || (mode == TWO_PLAYERS)){
+		MSG joystick_message;
+		joystick_message.ID = 1;
+		joystick_message.length = 2;
+		joystick_message.data[0] = joystick.x;
+		joystick_message.data[1] = joystick.y;
+		CAN_send(&joystick_message);
+	}
 }
 
 int main(void)
 {
 	/* Initialize UART */
-	UART_Init(UART_BAUD);
+ 	UART_Init(UART_BAUD);
 	printf("Reset\n");
 	_delay_ms(1000);
 	
@@ -228,16 +236,6 @@ int main(void)
 	
 	/* Draw something cool */
 	draw_home();
-	
-	/* Send and receive a CAN message */
-	MSG test_message;
-	test_message.ID = 173;
-	test_message.length = 1; 
-	test_message.data[0] = 153;
-	CAN_send(&test_message);
-	_delay_ms(1000);
-	MSG received_test = CAN_receive();
-	printf("ID: %d, length: %d, data: %d\n", received_test.ID, received_test.length, received_test.data[0]);
 	
 	/* Enable interrupts */
 	GICR |= (1 << INT0) | (1 << INT1); //| (1 << INT2);
@@ -253,6 +251,20 @@ int main(void)
 	uint8_t previous_slide_left = slide_left;
 	uint8_t slide_right = ADC_Convert(SLIDE_RIGHT);
 	uint8_t previous_slide_right = slide_right;
+	
+	/* Send and receive a CAN message */
+	/*MSG test_message;
+	test_message.ID = 10;
+	test_message.length = 1;
+	test_message.data[0] = 10;
+	
+	while(1){
+		CAN_send(&test_message);
+		printf("Sending: ID: %d, length: %d, data: %d\n", test_message.ID, test_message.length, test_message.data[0]);
+		_delay_ms(1000);
+		MSG received_test = CAN_receive();
+		printf("Receiving: ID: %d, length: %d, data: %d\n", received_test.ID, received_test.length, received_test.data[0]);
+	}*/
 	
     while(1)
     {

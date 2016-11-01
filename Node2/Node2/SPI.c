@@ -3,9 +3,9 @@
 void SPI_Init(void)
 {
 	/* Set CS, MOSI and SCK output, MISO input */
-	DDRB |= (1<<PB0)| (1<<PB1)|(1<<PB2);
+	DDRB |= (1<<PB7)| (1<<PB1)|(1<<PB2);
 	DDRB &= ~(1<<PB3);
-	PORTB |= 1;
+	DDRB |= 1;
 	/* Enable SPI, Master, set clock rate fck/16 */
 	SPCR = (1<<SPE)|(1<<MSTR)|(1<<SPR0);
 }
@@ -31,10 +31,10 @@ char SPI_read(void)
 
 void SPI_on(void)
 {
-	PORTB &= 0;
+	PORTB &= 0x38;
 }
 
 void SPI_off(void)
 {
-	PORTB |= 1;
+	PORTB |= (1 << PB7);
 }

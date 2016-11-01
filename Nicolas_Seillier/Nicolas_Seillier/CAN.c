@@ -12,8 +12,17 @@ void CAN_init()
 	MCP2515_RESET();
 	_delay_ms(100);
 	
-	/*loop back mode*/
-	MCP2515_BIT_MODIFY(MCP_CANCTRL, MODE_MASK, MODE_LOOPBACK);
+	uint8_t	value;
+	
+	//MCP2515_BIT_MODIFY(MCP_RXB0D0, 0b01100100, 0xFF);
+	
+	/*normal mode*/
+	MCP2515_BIT_MODIFY(MCP_CANCTRL, MODE_MASK, MODE_NORMAL);
+	
+	value = MCP2515_READ(MCP_CANSTAT);
+	if ((value & MODE_MASK)  != MODE_NORMAL) {
+		printf("MCP2515 is in normal mode \n");
+	}
 	
 	/*enable interrupts*/
 	MCP2515_BIT_MODIFY(MCP_CANINTE, 0b00000001, 0b00000001);
@@ -21,6 +30,10 @@ void CAN_init()
 
 void CAN_send(MSG* message)
 {	
+	/*wait until the previous message is sent*/
+	while(MCP2515_READ(MCP_TXB0CTRL) & 0x04 == 0x4)
+		;
+	
 	/*write ID*/
 	int ID_l = (message->ID & 0x07) << 5;
 	MCP2515_BIT_MODIFY(MCP_TXB0SIDL,0xE0,ID_l);
@@ -43,22 +56,25 @@ void CAN_send(MSG* message)
 
 MSG CAN_receive()
 {
-	MSG message;
-	
-	int ID_l = MCP2515_READ(MCP_RXB0SIDL);
-	int ID_h = MCP2515_READ(MCP_RXB0SIDH);
-	message.ID = ((ID_h << 3) + ((ID_l >> 5) & 0x7)) & 0xFF;
+	/*check if there is a message*/
+	if(MCP2515_READ(MCP_CANINTF) & 0x01 == 0x1){
+		MSG message;
 		
-	int length = MCP2515_READ(MCP_RXB0DLC);
-	message.length = length & 0x0F;
-	
-	for (int i=0; i<length; i++)
-	{
-		message.data[i] = MCP2515_READ(MCP_RXB0D0+i);
+		int ID_l = MCP2515_READ(MCP_RXB0SIDL);
+		int ID_h = MCP2515_READ(MCP_RXB0SIDH);
+		message.ID = ((ID_h << 3) + ((ID_l >> 5) & 0x7)) & 0xFF;
 		
+		int length = MCP2515_READ(MCP_RXB0DLC) & 0x0F;
+		message.length = length;
+		
+		for (int i=0; i < length || i < 8; i++)
+		{
+			message.data[i] = MCP2515_READ(MCP_RXB0D0+i);
+		}
+		
+		MCP2515_BIT_MODIFY(MCP_CANINTF,0b00000001,0b00000000);
+		
+		return message;
 	}
-	
-	MCP2515_BIT_MODIFY(MCP_CANINTF,0b00000001,0b00000000);	
-		
-	return message;
+	else return;
 }
