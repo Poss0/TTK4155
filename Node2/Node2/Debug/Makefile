@@ -52,9 +52,12 @@ SUBDIRS :=  \
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
+../ADC.c \
 ../CAN.c \
 ../MCP2515.c \
 ../Node2.c \
+../Score.c \
+../Servo.c \
 ../SPI.c \
 ../UART.c \
 ../src/ASF/mega/boards/stk600/rcx_x/init.c
@@ -67,33 +70,45 @@ ASM_SRCS +=
 
 
 OBJS +=  \
+ADC.o \
 CAN.o \
 MCP2515.o \
 Node2.o \
+Score.o \
+Servo.o \
 SPI.o \
 UART.o \
 src/ASF/mega/boards/stk600/rcx_x/init.o
 
 OBJS_AS_ARGS +=  \
+ADC.o \
 CAN.o \
 MCP2515.o \
 Node2.o \
+Score.o \
+Servo.o \
 SPI.o \
 UART.o \
 src/ASF/mega/boards/stk600/rcx_x/init.o
 
 C_DEPS +=  \
+ADC.d \
 CAN.d \
 MCP2515.d \
 Node2.d \
+Score.d \
+Servo.d \
 SPI.d \
 UART.d \
 src/ASF/mega/boards/stk600/rcx_x/init.d
 
 C_DEPS_AS_ARGS +=  \
+ADC.d \
 CAN.d \
 MCP2515.d \
 Node2.d \
+Score.d \
+Servo.d \
 SPI.d \
 UART.d \
 src/ASF/mega/boards/stk600/rcx_x/init.d
@@ -112,6 +127,12 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
+
+
+
+
 
 
 

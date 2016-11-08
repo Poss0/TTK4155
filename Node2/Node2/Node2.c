@@ -16,6 +16,9 @@
 #include "MCP2515.h"
 #include "MCP251DEFS.h"
 #include "CAN.h"
+#include "Servo.h"
+#include "ADC.h"
+#include "Score.h"
 
 #define F_CPU 16000000UL
 #define FOSC 16000000
@@ -29,8 +32,16 @@ int main(void)
 	printf("Reset\n");
 	_delay_ms(1000);
 	
+	/* Initialize ADC */
+	ADC_init();
+	
 	/* Initialize CAN */
 	CAN_init();
+	
+	/* Initialize PWM */
+	Servo_init();
+	
+	int score = 0;
 	
 	/* Send and receive a CAN message */
 	/*MSG test_message;
@@ -43,6 +54,9 @@ int main(void)
 		printf("Sending: ID: %d, length: %d, data: %d\n", test_message.ID, test_message.length, test_message.data[0]);
 		_delay_ms(1000);*/
 		received_test = CAN_receive();
-		printf("Receiving: ID: %d, length: %d, x: %i, y:%i\n", received_test.ID, received_test.length, received_test.data[0], received_test.data[1]);
+		//printf("Receiving: ID: %d, length: %d, x: %i, y:%i\n", received_test.ID, received_test.length, received_test.data[0], received_test.data[1]);
+		Servo_pwm(received_test.data[0]);
+		score = get_score(score);
+		printf("Score: %d\n", score);
 	}
 }

@@ -217,6 +217,7 @@ void ISR_joystick(Position joystick)
 		joystick_message.length = 2;
 		joystick_message.data[0] = joystick.x;
 		joystick_message.data[1] = joystick.y;
+		printf("Sending: ID: %d, length: %d, x: %i, y:%i\n", joystick_message.ID, joystick_message.length, joystick_message.data[0], joystick_message.data[1]);
 		CAN_send(&joystick_message);
 	}
 }

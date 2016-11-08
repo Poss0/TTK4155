@@ -17,7 +17,6 @@ void CAN_init()
 	
 	/*normal mode*/
 	MCP2515_BIT_MODIFY(MCP_CANCTRL, MODE_MASK, MODE_NORMAL);
-	printf("Stat = %d\n",MCP2515_READ(MCP_CANSTAT));
 	
 	/*enable interrupts*/
 	MCP2515_BIT_MODIFY(MCP_CANINTE, 0b00000001, 0b00000001);

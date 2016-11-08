@@ -201,6 +201,12 @@
     <Folder Include="src\config\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ADC.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ADC.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="CAN.c">
       <SubType>compile</SubType>
     </Compile>
@@ -217,6 +223,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Node2.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Score.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Score.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Servo.c">
