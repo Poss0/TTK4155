@@ -243,6 +243,12 @@
     <Compile Include="SPI.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="TWI_Master.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TWI_Master.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="UART.c">
       <SubType>compile</SubType>
     </Compile>

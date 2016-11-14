@@ -10,26 +10,28 @@
 #define SLOPE_SERVO 0.000006
 
 void Servo_init(){
-	//Set OC1A as an output
+	/* Set OC1A as an output */
 	DDRB |= (1 << PB5);
-	//Select fast PWM mode
+	/* Select fast PWM mode */
 	TCCR1B |= (1 << WGM13) | (1 << WGM12);
 	TCCR1A |=  (1 << WGM11);
 	TCCR1A &= ~(1 << WGM10);
 	TCCR1A |= 1 << COM1A1;
 	TCCR1A &= ~(1 << COM1A0);
-	//Set top value
+	/* Set top value */
 	ICR1 = TOP;
-	//Set compare value1
+	/* Set compare value to neutral */
 	OCR1A = NEUTRAL_SERVO * (TOP + 1) * FPWM;
-	//Set prescaler
+	/* Set prescaler */
 	TCCR1B &= ~(1 << CS12) & ~(1 << CS10);
 	TCCR1B |= (1 << CS11);
 }
 
 void Servo_pwm(float x){
+	/* Calculate PWM value */
 	float y = - SLOPE_SERVO * x + NEUTRAL_SERVO;
 	
+	/* Protect servo from out of bounds values */
 	if(y > TOP_SERVO){
 		y = TOP_SERVO;
 	}
@@ -37,5 +39,6 @@ void Servo_pwm(float x){
 		y = BOTTOM_SERVO;
 	}
 	
+	/* Set compare value */
 	OCR1A = y * (TOP + 1) * FPWM;
 }

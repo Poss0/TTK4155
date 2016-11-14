@@ -17,8 +17,10 @@ void ADC_init(){
 }
 
 uint16_t ADC_convert(){
+	/* Launch conversion */
 	ADCSRA |= (1 << ADSC);
+	/* Wait until conversion ends */
 	while(ADCSRA & (1<<ADSC));
-	printf("Result: %d\n", ADC & 0x3FF);
+	/* Return result */
 	return ADC & 0x3FF;
 }

@@ -1,13 +1,16 @@
 #include <avr/delay.h>
 #include "ADC.h"
 
-//Set a boolean value to say if the core has been increased or not already
+int scoreUpdated = 0;
 
 int get_score(int score){
 	int goal = ADC_convert();
-	if(goal < 50){
+	if(goal < 50 && scoreUpdated == 0){
 		score ++;
-		//while(ADC_convert() < 100);
+		scoreUpdated = 1;
+	}
+	else if(goal > 100){
+		scoreUpdated = 0;
 	}
 	return score;
 }

@@ -3,7 +3,6 @@
 
 
 void Servo_init(void);
-
 void Servo_pwm(float x);
 
 

@@ -32,31 +32,20 @@ int main(void)
 	printf("Reset\n");
 	_delay_ms(1000);
 	
-	/* Initialize ADC */
+	/* Initialize ADC, CAN, PWM */
 	ADC_init();
-	
-	/* Initialize CAN */
 	CAN_init();
-	
-	/* Initialize PWM */
 	Servo_init();
-	
+
+	/* Initialize variables */
+	MSG joystick_message;
 	int score = 0;
 	
-	/* Send and receive a CAN message */
-	/*MSG test_message;
-	test_message.ID = 20;
-	test_message.length = 1;
-	test_message.data[0] = 20;*/
-	MSG received_test;
 	while(1){
-		/*CAN_send(&test_message);
-		printf("Sending: ID: %d, length: %d, data: %d\n", test_message.ID, test_message.length, test_message.data[0]);
-		_delay_ms(1000);*/
-		received_test = CAN_receive();
-		//printf("Receiving: ID: %d, length: %d, x: %i, y:%i\n", received_test.ID, received_test.length, received_test.data[0], received_test.data[1]);
-		Servo_pwm(received_test.data[0]);
+		/* Read joystick position and calculate PWM to control servo */
+		joystick_message = CAN_receive();
+		Servo_pwm(joystick_message.data[0]);
+		/* Update score */
 		score = get_score(score);
-		printf("Score: %d\n", score);
 	}
 }
