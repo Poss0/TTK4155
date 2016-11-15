@@ -4,7 +4,7 @@
 
 void draw_home()
 {
-	OLED_Reset();
+	OLED_reset();
 	OLED_pos(1, 4);
 	OLED_print_string("Welcome to the best ping pong");
 	OLED_pos(3, 28);
@@ -15,7 +15,7 @@ void draw_home()
 
 void draw_main_menu()
 {
-	OLED_Reset();
+	OLED_reset();
 	OLED_pos(0, 46);
 	OLED_print_string("Main menu");	
 	OLED_pos(2, 8);
@@ -36,7 +36,7 @@ void draw_main_menu()
 
 void draw_one_player()
 {
-	OLED_Reset();
+	OLED_reset();
 	OLED_pos(0, 32);
 	OLED_print_string("One-player mode");
 	OLED_print_woman(3,58);
@@ -46,7 +46,7 @@ void draw_one_player()
 
 void draw_two_players()
 {
-	OLED_Reset();
+	OLED_reset();
 	OLED_pos(0, 32);
 	OLED_print_string("Two-players mode");
 	OLED_print_woman(3,29);
@@ -57,7 +57,7 @@ void draw_two_players()
 
 void draw_highscores()
 {
-	OLED_Reset();
+	OLED_reset();
 	OLED_pos(0, 44);
 	OLED_print_string("Highscores");
 	OLED_pos(2, 20);
@@ -72,7 +72,7 @@ void draw_highscores()
 
 void draw_settings()
 {
-	OLED_Reset();
+	OLED_reset();
 	OLED_pos(0, 48);
 	OLED_print_string("Settings");
 	OLED_pos(2, 8);
@@ -87,7 +87,7 @@ void draw_settings()
 
 void draw_brightness()
 {
-	OLED_Reset();
+	OLED_reset();
 	OLED_pos(0, 44);
 	OLED_print_string("Brightness");
 	OLED_pos(5, 0);

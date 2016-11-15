@@ -3,7 +3,7 @@
 #include <stdint.h>
 #include <avr/io.h>
 
-void SRAM_Init(void)
+void SRAM_init(void)
 {
 	/* Enable external SRAM: set SRE to 1 */
 	MCUCR |= (1 << SRE);

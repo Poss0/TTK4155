@@ -74,6 +74,16 @@ ISR(INT0_vect)
 			arrow = 2;
 			draw_settings();
 		}
+		else if((mode == ONE_PLAYER) || (mode == TWO_PLAYERS))
+		{
+			MSG reset_message;
+			reset_message.ID = 3;
+			reset_message.length = 0;
+			reset_message.data[0] = 0;
+			CAN_send(&reset_message);
+			OLED_pos(5, 20);
+			OLED_print_string("          ");
+		}
 		else if(mode == SETTINGS && arrow == 2)
 		{
 			mode = BRIGHTNESS;
@@ -101,21 +111,6 @@ ISR(INT1_vect)
 		arrow = 2;
 		draw_settings();
 	}
-}
-
-/*ISR(INT2_vect)
-{
-	printf("SPI\n");
-}*/
-
-void ISR_joystick_click()
-{
-	//printf("Interrupted by joystick button!\n");
-}
-
-void ISR_slide_right()
-{
-	//printf("Interrupted by right slide!\n");
 }
 
 void ISR_slide_left()
@@ -213,59 +208,50 @@ void ISR_joystick(Position joystick)
 	}
 	else if((mode == ONE_PLAYER) || (mode == TWO_PLAYERS)){
 		MSG joystick_message;
+		MSG score_message;
 		joystick_message.ID = 1;
 		joystick_message.length = 2;
 		joystick_message.data[0] = joystick.x;
 		joystick_message.data[1] = joystick.y;
-		printf("Sending: ID: %d, length: %d, x: %i, y:%i\n", joystick_message.ID, joystick_message.length, joystick_message.data[0], joystick_message.data[1]);
 		CAN_send(&joystick_message);
+		score_message = CAN_receive();
+		OLED_pos(5, 20);
+		char score_string[20];
+		sprintf(score_string, "Score: %d", score_message.data[0]);
+		OLED_print_string(score_string);
 	}
 }
 
 int main(void)
 {
 	/* Initialize UART */
- 	UART_Init(UART_BAUD);
+ 	UART_init(UART_BAUD);
 	printf("Reset\n");
 	_delay_ms(1000);
 	
 	/* Initialize SRAM, ADC, OLED and CAN */
-	SRAM_Init();
-	OLED_Reset();
-	OLED_Init();
+	SRAM_init();
+	OLED_reset();
+	OLED_init();
 	CAN_init();
 	
 	/* Draw something cool */
 	draw_home();
 	
 	/* Enable interrupts */
-	GICR |= (1 << INT0) | (1 << INT1); //| (1 << INT2);
+	GICR |= (1 << INT0) | (1 << INT1);
 	SREG |= (1 << 7);
 	MCUCR |= (1<< ISC00) | (1 << ISC01) | (1 << ISC10) | (1 << ISC11);
 	EMCUCR &= (0 << ISC2);
 	sei();
 	
-	/* Variables initialization */
+	/* Initialize variables */
 	Position joystick = Joystick_Position();
 	Position joystick_previous = joystick;
 	slide_left = ADC_Convert(SLIDE_LEFT);
 	uint8_t previous_slide_left = slide_left;
 	uint8_t slide_right = ADC_Convert(SLIDE_RIGHT);
 	uint8_t previous_slide_right = slide_right;
-	
-	/* Send and receive a CAN message */
-	/*MSG test_message;
-	test_message.ID = 10;
-	test_message.length = 1;
-	test_message.data[0] = 10;
-	
-	while(1){
-		CAN_send(&test_message);
-		printf("Sending: ID: %d, length: %d, data: %d\n", test_message.ID, test_message.length, test_message.data[0]);
-		_delay_ms(1000);
-		MSG received_test = CAN_receive();
-		printf("Receiving: ID: %d, length: %d, data: %d\n", received_test.ID, received_test.length, received_test.data[0]);
-	}*/
 	
     while(1)
     {
@@ -283,18 +269,6 @@ int main(void)
 		}
 		previous_slide_left = slide_left;
 		 
-		slide_right = ADC_Convert(SLIDE_RIGHT);
-		if(slide_right != previous_slide_right)
-		{
-			ISR_slide_right();
-		}
-		previous_slide_right = slide_right;
-		
-		if(JOYSTICK_BUTTON == 1)
-		{
-			ISR_joystick_click();
-		}
-		
 		_delay_ms(800);
     }
 }

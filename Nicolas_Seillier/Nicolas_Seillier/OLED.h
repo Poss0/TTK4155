@@ -8,9 +8,9 @@ void OLED_write_data(uint8_t data);
 
 void OLED_set_brightness(uint8_t value);
 
-void OLED_Reset();
+void OLED_reset();
 
-void OLED_Init();
+void OLED_init();
 
 void OLED_pos(uint8_t page, uint8_t segment);
 

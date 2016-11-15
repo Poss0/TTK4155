@@ -2,11 +2,11 @@
 #define UART_H_
 
 
-void UART_Transmit(unsigned char data);
+void UART_transmit(unsigned char data);
 
-unsigned char UART_Receive(void);
+unsigned char UART_receive(void);
 
-void UART_Init(unsigned int ubrr);
+void UART_init(unsigned int ubrr);
 
 
 #endif

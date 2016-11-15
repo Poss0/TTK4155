@@ -23,7 +23,7 @@ void OLED_set_brightness(uint8_t value)
 }
 
 /* Erase the RAM line by line */
-void OLED_Reset()
+void OLED_reset()
 {
 	OLED_write_cmd(0xb0);
 	for(int i=0; i<128; i++){
@@ -60,7 +60,7 @@ void OLED_Reset()
 }
 
 /* Init the OLED display */
-void OLED_Init()
+void OLED_init()
 {
 	OLED_write_cmd(0xae);        //display  off
 	OLED_write_cmd(0xa1);        //segment  remap

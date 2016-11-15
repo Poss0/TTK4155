@@ -1,6 +1,6 @@
 #include <avr/io.h>
 
-void SPI_Init(void)
+void SPI_init(void)
 {
 	/* Set CS, MOSI and SCK output, MISO input */
 	DDRB |= (1<<PB4)| (1<<PB5)|(1<<PB7);

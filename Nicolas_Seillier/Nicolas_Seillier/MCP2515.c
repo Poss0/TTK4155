@@ -3,14 +3,14 @@
 #include "SPI.h"
 #include "MCP251DEFS.h"
 
-void MCP2515_RESET()
+void MCP2515_reset()
 {
 	SPI_on();
 	SPI_write(MCP_RESET);
 	SPI_off();
 }
 
-char MCP2515_READ(uint8_t address)
+char MCP2515_read(uint8_t address)
 {
 	SPI_on(); 
 	SPI_write(MCP_READ);
@@ -20,7 +20,7 @@ char MCP2515_READ(uint8_t address)
 	return data;
 }
 
-void MCP2515_WRITE(uint8_t address, uint8_t data)
+void MCP2515_write(uint8_t address, uint8_t data)
 {
 	SPI_on();
 	SPI_write(MCP_WRITE);
@@ -30,14 +30,14 @@ void MCP2515_WRITE(uint8_t address, uint8_t data)
 	
 }
 
-void MCP2515_REQUEST_TO_SEND()
+void MCP2515_request_to_send()
 {
 	SPI_on();
 	SPI_write(MCP_RTS_TX0);
 	SPI_off();
 }
 
-char MCP2515_READ_STATUS()
+char MCP2515_read_status()
 {
 	SPI_on();
 	SPI_write(MCP_READ_STATUS);
@@ -46,7 +46,7 @@ char MCP2515_READ_STATUS()
 	return data;
 }
 
-void MCP2515_BIT_MODIFY(uint8_t address, uint8_t mask, uint8_t data)
+void MCP2515_bit_modify(uint8_t address, uint8_t mask, uint8_t data)
 {
 	SPI_on();
 	SPI_write(MCP_BITMOD);
